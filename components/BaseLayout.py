@@ -19,8 +19,15 @@ def pageNavBar(page_content,side_nav=False,side_nav_content=None):
     dropdown = dbc.DropdownMenu(
         children=[
             dbc.DropdownMenuItem("Temas", header=True),
-            dbc.DropdownMenuItem("Apps 1", href="/apps/app1"),
             dbc.DropdownMenuItem("Probabilidad y Estadistica", href="/apps/A_probStat"),
+            dbc.DropdownMenuItem("Simulación", href="/apps/B_simulation"),
+            dbc.DropdownMenuItem("Cadenas de Markov", href="/apps/C_markov"),
+            dbc.DropdownMenuItem("Filas de Espera", href="/apps/D_queues"),
+            dbc.DropdownMenuItem("Camino Crítico", href="/apps/E_critPath"),
+            dbc.DropdownMenuItem("Programación Lineal", href="/apps/F_linProg"),
+            dbc.DropdownMenuItem("Inventarios", href="/apps/G_inventory"),
+            dbc.DropdownMenuItem("Transporte", href="/apps/H_transport"),
+            dbc.DropdownMenuItem("Apps 1", href="/apps/app1"),
             dbc.DropdownMenuItem("Entry 1"),
             dbc.DropdownMenuItem("Entry 2"),
             dbc.DropdownMenuItem(divider=True),
