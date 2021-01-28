@@ -5,6 +5,6 @@ import dash_bootstrap_components as dbc
 from components.BaseLayout import pageNavBar,sideNavBar
 from app import app
 
-topics=['Montecarlo']
+topics=['Qué es una cadena de Markov?','Estados absorventes','Matriz de transición de 1 paso']
 base_selection='Montecarlo'
-layout = pageNavBar(base_selection,side_nav=True,side_nav_content=sideNavBar('B_simulation',topics=topics,selected=base_selection))
+layout = pageNavBar(base_selection,side_nav_content=sideNavBar('B_simulation',topics=topics,selected=base_selection))

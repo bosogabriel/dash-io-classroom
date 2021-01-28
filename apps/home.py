@@ -7,4 +7,4 @@ from app import app
 
 topics=['Montecarlo']
 base_selection='Montecarlo'
-layout = pageNavBar(base_selection,side_nav=True,side_nav_content=sideNavBar('B_simulation',topics=topics,selected=base_selection))
+layout = pageNavBar(base_selection,side_nav_content=sideNavBar('B_simulation',topics=topics,selected=base_selection))

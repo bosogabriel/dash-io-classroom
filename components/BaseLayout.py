@@ -5,12 +5,13 @@ from typing import List
 
 # Left Nav Bar - Topic Selector
 def sideNavBar(subject: str,topics: List[str],selected: str):
+    #TODO revisar si como agregar dinamicamente la ruta al index o como escaparla 
     navItems=[dbc.NavItem(dbc.NavLink(topic, active=True, href=subject+'/'+topic)) if topic==selected else dbc.NavItem(dbc.NavLink(topic, active=False, href=subject+'/'+topic)) for topic in topics]
     nav = dbc.Nav(navItems,vertical="md",navbar = True)
     return nav
 
 # Main Nav Bar + Layout
-def pageNavBar(page_content,side_nav=False,side_nav_content=None):
+def pageNavBar(page_content,side_nav_content=None):
     """"""
     # Home link
     nav_item = dbc.NavItem(dbc.NavLink("Inicio", href="/home"))
@@ -39,13 +40,13 @@ def pageNavBar(page_content,side_nav=False,side_nav_content=None):
     )
     # Navbar core design
     navbar = dbc.Navbar(
-        dbc.Container(
+#        dbc.Container(
             [
                 html.A(
                     # Use row and col to control vertical alignment of logo / brand
                     dbc.Row(
                         [
-                            dbc.Col(dbc.NavbarBrand("IO", className="ml-2")),
+                            dbc.Col(dbc.NavbarBrand("Investigación Operativa", className="ml-2")),
                         ],
                         align="center",
                         no_gutters=True,
@@ -61,12 +62,14 @@ def pageNavBar(page_content,side_nav=False,side_nav_content=None):
                     navbar=True,
                 ),
             ]
-        ),
+#        )
+        ,
         color="primary",
         dark=True,
+        sticky='top'
     )
     # Structure page with/without side navbar
-    if side_nav:
+    if side_nav_content:
         structure = html.Div(
         [
             dbc.Row(dbc.Col(html.Div(navbar))),
